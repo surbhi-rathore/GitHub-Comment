@@ -1,0 +1,31 @@
+angular.module('gitcommit.controllers', []).controller('gitCtrl', ['$scope', function($scope) {
+        $scope.sub = '';
+        $scope.des = '';
+        $scope.tic = '';
+        $scope.alldata = '';
+        $scope.t = '';
+        
+	$scope.selecttype = 'select type';
+        $scope.typechange = function(type){
+            $scope.t = type;
+            $scope.colon = '::';
+        };
+    
+        //$scope.typesubject = 'subject here';
+        $scope.subchange = function(subject){
+            $scope.sub = subject;
+        };
+        
+        $scope.deschange = function(description){
+           $scope.des = description;
+        };
+ 
+        $scope.ticketchange = function(ticket){
+           $scope.ref = 'ref';
+           $scope.hash = '#';
+           $scope.tic = ticket;
+           $scope.ticrep = $scope.tic.replace(/,/g , " #");
+        };
+               
+}]);
+
